@@ -48,7 +48,9 @@ git log -L :'func providerSource':provider_source.go
 
 
 6. Найдите все коммиты в которых была изменена функция globalPluginDirs.
-git log -SglobalPluginDirs --oneline
+git grep "globalPluginDirs"
+git log -L :globalPluginDirs:plugins.go
+
 
 35a058fb3 main: configure credentials from the CLI config file
 c0b176109 prevent log output during init
