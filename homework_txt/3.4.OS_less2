@@ -56,7 +56,39 @@ vagrant@vagrant:~$ cat /etc/default/node_exporter
 # $ systemctl edit node_exporter.service
 # or
 # $ systemctl edit --full node_exporter.service
-CUSTOM_OPTIONS=""
+CUSTOM_OPTIONS="--collector.cpu.info"
+
+vagrant@vagrant:~$ sudo systemctl status node_exporter
+● node_exporter.service - Node Exporter
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2021-12-02 11:14:05 UTC; 2s ago
+   Main PID: 136656 (node_exporter)
+      Tasks: 4 (limit: 4559)
+     Memory: 2.3M
+     CGroup: /system.slice/node_exporter.service
+             └─136656 /usr/local/bin/node_exporter --collector.cpu.info
+
+Dec 02 11:14:05 vagrant node_exporter[136656]: ts=2021-12-02T11:14:05.773Z caller=node_exporter.go:115 level=info collector=thermal_zone
+Dec 02 11:14:05 vagrant node_exporter[136656]: ts=2021-12-02T11:14:05.773Z caller=node_exporter.go:115 level=info collector=time
+Dec 02 11:14:05 vagrant node_exporter[136656]: ts=2021-12-02T11:14:05.773Z caller=node_exporter.go:115 level=info collector=timex
+Dec 02 11:14:05 vagrant node_exporter[136656]: ts=2021-12-02T11:14:05.773Z caller=node_exporter.go:115 level=info collector=udp_queues
+Dec 02 11:14:05 vagrant node_exporter[136656]: ts=2021-12-02T11:14:05.773Z caller=node_exporter.go:115 level=info collector=uname
+Dec 02 11:14:05 vagrant node_exporter[136656]: ts=2021-12-02T11:14:05.773Z caller=node_exporter.go:115 level=info collector=vmstat
+Dec 02 11:14:05 vagrant node_exporter[136656]: ts=2021-12-02T11:14:05.773Z caller=node_exporter.go:115 level=info collector=xfs
+Dec 02 11:14:05 vagrant node_exporter[136656]: ts=2021-12-02T11:14:05.773Z caller=node_exporter.go:115 level=info collector=zfs
+Dec 02 11:14:05 vagrant node_exporter[136656]: ts=2021-12-02T11:14:05.773Z caller=node_exporter.go:199 level=info msg="Listening on" address=:9100
+Dec 02 11:14:05 vagrant node_exporter[136656]: ts=2021-12-02T11:14:05.774Z caller=tls_config.go:195 level=info msg="TLS is disabled." http2=false
+
+vagrant@vagrant:~$ curl http://localhost:9100/metrics | grep cpu_info
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0# HELP node_cpu_info CPU information from /proc/cpuinfo.
+# TYPE node_cpu_info gauge
+node_cpu_info{cachesize="6144 KB",core="0",cpu="0",family="6",microcode="",model="158",model_name="Intel(R) Core(TM) i5-7600 CPU @ 3.50GHz",package="0",stepping="9",vendor="GenuineIntel"} 1
+node_cpu_info{cachesize="6144 KB",core="1",cpu="1",family="6",microcode="",model="158",model_name="Intel(R) Core(TM) i5-7600 CPU @ 3.50GHz",package="0",stepping="9",vendor="GenuineIntel"} 1
+100 59628    0 59628    0     0  3639k      0 --:--:-- --:--:-- --:--:-- 3882k
+
+Как видно, процесс стартовал с параметром, ктороый был определен в переменной $CUSTOM_OPTIONS из EnvironmentFile.
 
 Удостоверился в работоспособности процесса
 
