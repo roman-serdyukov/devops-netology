@@ -1,0 +1,147 @@
+1. Работа c HTTP через телнет.
+
+-    Подключитесь утилитой телнет к сайту stackoverflow.com telnet stackoverflow.com 80
+-    отправьте HTTP запрос
+
+GET /questions HTTP/1.0
+HOST: stackoverflow.com
+[press enter]
+[press enter]
+
+-    В ответе укажите полученный HTTP код, что он означает?
+
+Trying 151.101.1.69...
+Connected to stackoverflow.com.
+Escape character is '^]'.
+GET /questions HTTP/1.0
+HOST: stackoverflow.com
+
+HTTP/1.1 301 Moved Permanently
+cache-control: no-cache, no-store, must-revalidate
+location: https://stackoverflow.com/questions
+x-request-guid: 9cc15bb9-822a-4e4d-af4c-04abbb318b8c
+feature-policy: microphone 'none'; speaker 'none'
+content-security-policy: upgrade-insecure-requests; frame-ancestors 'self' https://stackexchange.com
+Accept-Ranges: bytes
+Date: Fri, 03 Dec 2021 11:13:32 GMT
+Via: 1.1 varnish
+Connection: close
+X-Served-By: cache-hel1410023-HEL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1638530013.663548,VS0,VE109
+Vary: Fastly-SSL
+X-DNS-Prefetch-Control: off
+Set-Cookie: prov=f838d6ce-f1b6-b0b3-109b-dd53f1deb990; domain=.stackoverflow.com; expires=Fri, 01-Jan-2055 00:00:00 GMT; path=/; HttpOnly
+
+Означает, что запршенный ресурс был перемещен в https://stackoverflow.com/questions
+
+2. Повторите задание 1 в браузере, используя консоль разработчика F12.
+
+-   откройте вкладку Network
+-   отправьте запрос http://stackoverflow.com
+-   найдите первый ответ HTTP сервера, откройте вкладку Headers
+-   укажите в ответе полученный HTTP код.
+-   проверьте время загрузки страницы, какой запрос обрабатывался дольше всего?
+-   приложите скриншот консоли браузера в ответ.
+
+Request URL: https://stackoverflow.com/
+Request Method: GET
+Status Code: 200 
+Remote Address: 151.101.129.69:443
+Referrer Policy: strict-origin-when-cross-origin
+accept-ranges: bytes
+cache-control: private
+content-encoding: gzip
+content-security-policy: upgrade-insecure-requests; frame-ancestors 'self' https://stackexchange.com
+content-type: text/html; charset=utf-8
+date: Fri, 03 Dec 2021 11:53:41 GMT
+feature-policy: microphone 'none'; speaker 'none'
+strict-transport-security: max-age=15552000
+vary: Accept-Encoding,Fastly-SSL
+via: 1.1 varnish
+x-cache: MISS
+x-cache-hits: 0
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+x-request-guid: 57c76c10-6187-4936-a9f5-5ce827630a28
+x-served-by: cache-hel1410024-HEL
+x-timer: S1638532422.730802,VS0,VE113
+:authority: stackoverflow.com
+:method: GET
+:path: /
+:scheme: https
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+accept-encoding: gzip, deflate, br
+accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+cookie: prov=28cd78c3-20e3-524c-5995-a17d0a7021f6; _ga=GA1.2.2100811577.1638532338; _gid=GA1.2.1221289927.1638532338
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+sec-fetch-dest: document
+sec-fetch-mode: navigate
+sec-fetch-site: none
+sec-fetch-user: ?1
+upgrade-insecure-requests: 1
+user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36
+
+Дольше всего обрабатывался запрос страницы https://stackoverflow.com/ - 247 ms
+
+Скрин приложил отдельно: 3_6_Отладчик
+
+3. Какой IP адрес у вас в интернете?
+
+77.108.125.42
+
+4. Какому провайдеру принадлежит ваш IP адрес? Какой автономной системе AS? Воспользуйтесь утилитой whois
+
+COMCOR-B2B-Clients
+
+AS8732
+
+5. Через какие сети проходит пакет, отправленный с вашего компьютера на адрес 8.8.8.8? Через какие AS? Воспользуйтесь утилитой traceroute
+
+roman@DME-UBUNTU:/data/VMs/vagrant$ traceroute -A 8.8.8.8
+traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
+ 1  _gateway (192.168.100.2) [*]  0.550 ms  0.518 ms  0.492 ms
+ 2  77.108.125.41 (77.108.125.41) [AS8732]  2.852 ms  2.922 ms  3.394 ms
+ 3  mx10k3-vlad-acx-vlad.comcor.ru (62.117.100.161) [AS8732]  2.197 ms mx10k3-vlad-acx-vlad.comcor.ru (62.117.100.163) [AS8732]  2.019 ms  1.986 ms
+ 4  72.14.194.74 (72.14.194.74) [AS15169]  2.607 ms  2.414 ms  2.541 ms
+ 5  108.170.250.130 (108.170.250.130) [AS15169]  3.362 ms 108.170.250.83 (108.170.250.83) [AS15169]  3.192 ms 108.170.250.113 (108.170.250.113) [AS15169]  3.951 ms
+ 6  * 172.253.66.116 (172.253.66.116) [AS15169]  17.941 ms 142.251.49.24 (142.251.49.24) [AS15169]  15.625 ms
+ 7  216.239.57.222 (216.239.57.222) [AS15169]  18.692 ms  18.656 ms 108.170.232.251 (108.170.232.251) [AS15169]  20.066 ms
+ 8  108.170.233.161 (108.170.233.161) [AS15169]  17.855 ms 216.239.62.9 (216.239.62.9) [AS15169]  19.536 ms 172.253.51.239 (172.253.51.239) [AS15169]  21.332 ms
+ 9  * * *
+10  * * *
+11  * * *
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * dns.google (8.8.8.8) [AS15169]  17.295 ms
+
+6. Повторите задание 5 в утилите mtr. На каком участке наибольшая задержка - delay?
+
+AS15169 216.239.57.222
+
+7. Какие DNS сервера отвечают за доменное имя dns.google? Какие A записи? воспользуйтесь утилитой dig
+
+roman@DME-UBUNTU:/data/VMs/vagrant$ dig dns.google
+
+dns.google.		10800	IN	NS	ns4.zdns.google.
+dns.google.		10800	IN	NS	ns1.zdns.google.
+dns.google.		10800	IN	NS	ns3.zdns.google.
+dns.google.		10800	IN	NS	ns2.zdns.google.
+
+dns.google.		900	IN	A	8.8.4.4
+dns.google.		900	IN	A	8.8.8.8
+
+8. Проверьте PTR записи для IP адресов из задания 7. Какое доменное имя привязано к IP? воспользуйтесь утилитой dig
+
+4.4.8.8.in-addr.arpa.	26537	IN	PTR	dns.google.
+8.8.8.8.in-addr.arpa.	4661	IN	PTR	dns.google.
+
+
+
+
