@@ -10,6 +10,7 @@
 
 ### Ответ
 
+<<<<<<< HEAD
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework_txt//05-virt-04-docker-compose/assets/image.png)
 
 ## Задача 2
@@ -22,6 +23,7 @@
 
 ### Ответ
 
+<<<<<<< HEAD
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework_txt//05-virt-04-docker-compose/assets/vm.png)
 
 ## Задача 3
@@ -34,6 +36,7 @@
 
 ### Ответ
 
+<<<<<<< HEAD
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework_txt/05-virt-04-docker-compose/assets/grafana.png)
 
 Задача 4 (*)
@@ -46,4 +49,5 @@
 
 ### Ответ
 
+<<<<<<< HEAD
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework_txt//05-virt-04-docker-compose/assets/node2.png)
