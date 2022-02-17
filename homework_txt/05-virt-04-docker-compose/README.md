@@ -10,7 +10,7 @@
 
 ### Ответ
 
-https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-virt-04-docker-compose/assets/image.png
+![Image alt](https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-virt-04-docker-compose/assets/image.png)
 
 ## Задача 2
 
@@ -22,7 +22,7 @@ https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-vi
 
 ### Ответ
 
-https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-virt-04-docker-compose/assets/vm.png
+![Image alt](https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-virt-04-docker-compose/assets/vm.png)
 
 ## Задача 3
 
@@ -34,7 +34,7 @@ https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-vi
 
 ### Ответ
 
-https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-virt-04-docker-compose/assets/grafana.png
+![Image alt](https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-virt-04-docker-compose/assets/grafana.png)
 
 Задача 4 (*)
 
@@ -46,4 +46,4 @@ https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-vi
 
 ### Ответ
 
-https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-virt-04-docker-compose/assets/node2.png
+![Image alt](https://github.com/roman-serdyukov/devops-netology/tree/main/homework_txt//05-virt-04-docker-compose/assets/node2.png)
