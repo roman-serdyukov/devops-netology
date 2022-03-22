@@ -1,0 +1,94 @@
+roman@DME-UBUNTU:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/roman/.ssh/id_rsa): /home/roman/.ssh/for_netology_rsa
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/roman/.ssh/for_netology_rsa
+Your public key has been saved in /home/roman/.ssh/for_netology_rsa.pub
+The key fingerprint is:
+SHA256:yRz74GF6TQaOYefErQJo2i+pQrFFbjh3OD6MVjBWJpI roman@DME-UBUNTU
+The key's randomart image is:
++---[RSA 3072]----+
+|.o.o             |
+|E+oo   . .       |
+|. O o o * .      |
+| B O + X *       |
+|. & o o S o      |
+| = *   = B       |
+|o o o . o o      |
+|.. .   .         |
+|o                |
++----[SHA256]-----+
+roman@DME-UBUNTU:~$ ls .ssh/
+for_netology_rsa  for_netology_rsa.pub  id_rsa  id_rsa.pub  known_hosts  known_hosts.old
+roman@DME-UBUNTU:~$ ssh-copy-id user@192.168.100.14
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 2 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+user@192.168.100.14's password: 
+
+Number of key(s) added: 2
+
+Now try logging into the machine, with:   "ssh 'user@192.168.100.14'"
+and check to make sure that only the key(s) you wanted were added.
+
+roman@DME-UBUNTU:~$ ssh user@192.168.100.14
+Welcome to Ubuntu 21.04 (GNU/Linux 5.11.0-41-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Dec 17 06:33:21 UTC 2021
+
+  System load:  0.19               Processes:               144
+  Usage of /:   41.8% of 18.57GB   Users logged in:         1
+  Memory usage: 22%                IPv4 address for enp0s3: 192.168.100.14
+  Swap usage:   0%
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+7 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+New release '21.10' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Mon Dec  6 12:11:27 2021 from 192.168.101.89
+user@u-server-test:~$ exit
+logout
+Connection to 192.168.100.14 closed.
+roman@DME-UBUNTU:~$ ssh -i ~/.ssh/
+for_netology_rsa  id_rsa            known_hosts       known_hosts.old   
+roman@DME-UBUNTU:~$ ssh -i ~/.ssh/for_netology_rsa user@192.168.100.14
+Welcome to Ubuntu 21.04 (GNU/Linux 5.11.0-41-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Dec 17 06:34:40 UTC 2021
+
+  System load:  0.19               Processes:               144
+  Usage of /:   41.8% of 18.57GB   Users logged in:         1
+  Memory usage: 22%                IPv4 address for enp0s3: 192.168.100.14
+  Swap usage:   0%
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+7 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+New release '21.10' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Fri Dec 17 06:33:22 2021 from 192.168.101.89
+user@u-server-test:~$ 
+
