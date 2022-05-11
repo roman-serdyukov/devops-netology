@@ -26,9 +26,9 @@
 
 #### Ответ
 
-![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/screenshots/09-ci-02-cicd/screenshots/9.2.1-1.png)
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/09-ci-02-cicd/screenshots/9.2.1-1.png)
 
-![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/screenshots/09-ci-02-cicd/screenshots/9.2.1-2.png)
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/09-ci-02-cicd/screenshots/9.2.1-2.png)
 
 ## Знакомство с Nexus
 
@@ -55,7 +55,7 @@
 
 #### Ответ
 
-![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/screenshots/09-ci-02-cicd/screenshots/9.2.2.png)
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/09-ci-02-cicd/screenshots/9.2.2.png)
 
 ```xml
 <metadata modelVersion="1.1.0">
