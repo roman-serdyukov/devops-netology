@@ -29,9 +29,9 @@ dynamodb.
 * Вывод команды `terraform workspace list`.
 * Вывод команды `terraform plan` для воркспейса `prod`.  
 
-### Ответ
+### Ответ для AWS
 
-* [Ссылка на репозиторий с конфигурацияй Terraform для AWS](https://github.com/roman-serdyukov/devops-netology/tree/main/Terraform/7.3.For_aws)
+* [Ссылка на репозиторий с конфигурацией Terraform для AWS](https://github.com/roman-serdyukov/devops-netology/tree/main/Terraform/7.3.For_aws)
 
 * Вывод команды `terraform workspace list`:
 ```bash
@@ -519,4 +519,365 @@ Changes to Outputs:
   + region             = "ec2.eu-west-1.amazonaws.com"
   + user_id            = "AIDASOWOODUFVZB4V6DPS"
 ```
+
+### Ответ для YC
+
+* [Ссылка на репозиторий с конфигурацией Terraform для AWS](https://github.com/roman-serdyukov/devops-netology/tree/main/Terraform/7.3.For_YC)
+
+
+* Вывод команды `terraform workspace list`:
+```bash
+roman@DME-UBUNTU:~/Документы/projects/devops-netology/Terraform/7.3.For_YC$ terraform workspace list
+  default
+* prod
+  state
+  ```
+* Вывод команды `terraform plan` для воркспейса `prod`:
+```bash
+roman@DME-UBUNTU:~/Документы/projects/devops-netology/Terraform/7.3.For_YC$ terraform plan
+data.yandex_client_config.client: Reading...
+data.yandex_client_config.client: Read complete after 1s [id=1462900099]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are
+indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # yandex_compute_instance.vm-other["centos7"] will be created
+  + resource "yandex_compute_instance" "vm-other" {
+      + created_at                = (known after apply)
+      + folder_id                 = (known after apply)
+      + fqdn                      = (known after apply)
+      + hostname                  = (known after apply)
+      + id                        = (known after apply)
+      + metadata                  = {
+          + "foo"      = "bar"
+          + "ssh-keys" = <<-EOT
+                ubuntu:-----BEGIN OPENSSH PRIVATE KEY-----
+               'My ssh key'
+                -----END OPENSSH PRIVATE KEY-----
+            EOT
+        }
+      + name                      = "centos7"
+      + network_acceleration_type = "standard"
+      + platform_id               = "standard-v1"
+      + service_account_id        = (known after apply)
+      + status                    = (known after apply)
+      + zone                      = (known after apply)
+
+      + boot_disk {
+          + auto_delete = true
+          + device_name = (known after apply)
+          + disk_id     = (known after apply)
+          + mode        = (known after apply)
+
+          + initialize_params {
+              + block_size  = (known after apply)
+              + description = (known after apply)
+              + image_id    = "fd80le4b8gt2u33lvubr"
+              + name        = (known after apply)
+              + size        = (known after apply)
+              + snapshot_id = (known after apply)
+              + type        = "network-hdd"
+            }
+        }
+
+      + network_interface {
+          + index              = (known after apply)
+          + ip_address         = (known after apply)
+          + ipv4               = true
+          + ipv6               = (known after apply)
+          + ipv6_address       = (known after apply)
+          + mac_address        = (known after apply)
+          + nat                = true
+          + nat_ip_address     = (known after apply)
+          + nat_ip_version     = (known after apply)
+          + security_group_ids = (known after apply)
+          + subnet_id          = (known after apply)
+        }
+
+      + placement_policy {
+          + host_affinity_rules = (known after apply)
+          + placement_group_id  = (known after apply)
+        }
+
+      + resources {
+          + core_fraction = 100
+          + cores         = 2
+          + memory        = 4
+        }
+
+      + scheduling_policy {
+          + preemptible = (known after apply)
+        }
+    }
+
+  # yandex_compute_instance.vm-other["ubuntu18-04"] will be created
+  + resource "yandex_compute_instance" "vm-other" {
+      + created_at                = (known after apply)
+      + folder_id                 = (known after apply)
+      + fqdn                      = (known after apply)
+      + hostname                  = (known after apply)
+      + id                        = (known after apply)
+      + metadata                  = {
+          + "foo"      = "bar"
+          + "ssh-keys" = <<-EOT
+                ubuntu:-----BEGIN OPENSSH PRIVATE KEY-----
+                'My ssh key'
+                -----END OPENSSH PRIVATE KEY-----
+            EOT
+        }
+      + name                      = "ubuntu18-04"
+      + network_acceleration_type = "standard"
+      + platform_id               = "standard-v1"
+      + service_account_id        = (known after apply)
+      + status                    = (known after apply)
+      + zone                      = (known after apply)
+
+      + boot_disk {
+          + auto_delete = true
+          + device_name = (known after apply)
+          + disk_id     = (known after apply)
+          + mode        = (known after apply)
+
+          + initialize_params {
+              + block_size  = (known after apply)
+              + description = (known after apply)
+              + image_id    = "fd83bj827tp2slnpp7f0"
+              + name        = (known after apply)
+              + size        = (known after apply)
+              + snapshot_id = (known after apply)
+              + type        = "network-hdd"
+            }
+        }
+
+      + network_interface {
+          + index              = (known after apply)
+          + ip_address         = (known after apply)
+          + ipv4               = true
+          + ipv6               = (known after apply)
+          + ipv6_address       = (known after apply)
+          + mac_address        = (known after apply)
+          + nat                = true
+          + nat_ip_address     = (known after apply)
+          + nat_ip_version     = (known after apply)
+          + security_group_ids = (known after apply)
+          + subnet_id          = (known after apply)
+        }
+
+      + placement_policy {
+          + host_affinity_rules = (known after apply)
+          + placement_group_id  = (known after apply)
+        }
+
+      + resources {
+          + core_fraction = 100
+          + cores         = 2
+          + memory        = 4
+        }
+
+      + scheduling_policy {
+          + preemptible = (known after apply)
+        }
+    }
+
+  # yandex_compute_instance.vm-workspace[0] will be created
+  + resource "yandex_compute_instance" "vm-workspace" {
+      + created_at                = (known after apply)
+      + folder_id                 = (known after apply)
+      + fqdn                      = (known after apply)
+      + hostname                  = (known after apply)
+      + id                        = (known after apply)
+      + metadata                  = {
+          + "foo"      = "bar"
+          + "ssh-keys" = <<-EOT
+                ubuntu:-----BEGIN OPENSSH PRIVATE KEY-----
+                'My ssh key'
+                -----END OPENSSH PRIVATE KEY-----
+            EOT
+        }
+      + name                      = "vm-prod-state-1"
+      + network_acceleration_type = "standard"
+      + platform_id               = "standard-v2"
+      + service_account_id        = (known after apply)
+      + status                    = (known after apply)
+      + zone                      = (known after apply)
+
+      + boot_disk {
+          + auto_delete = true
+          + device_name = (known after apply)
+          + disk_id     = (known after apply)
+          + mode        = (known after apply)
+
+          + initialize_params {
+              + block_size  = (known after apply)
+              + description = (known after apply)
+              + image_id    = "fd81hgrcv6lsnkremf32"
+              + name        = (known after apply)
+              + size        = (known after apply)
+              + snapshot_id = (known after apply)
+              + type        = "network-hdd"
+            }
+        }
+
+      + network_interface {
+          + index              = (known after apply)
+          + ip_address         = (known after apply)
+          + ipv4               = true
+          + ipv6               = (known after apply)
+          + ipv6_address       = (known after apply)
+          + mac_address        = (known after apply)
+          + nat                = true
+          + nat_ip_address     = (known after apply)
+          + nat_ip_version     = (known after apply)
+          + security_group_ids = (known after apply)
+          + subnet_id          = (known after apply)
+        }
+
+      + placement_policy {
+          + host_affinity_rules = (known after apply)
+          + placement_group_id  = (known after apply)
+        }
+
+      + resources {
+          + core_fraction = 100
+          + cores         = 2
+          + memory        = 4
+        }
+
+      + scheduling_policy {
+          + preemptible = (known after apply)
+        }
+    }
+
+  # yandex_compute_instance.vm-workspace[1] will be created
+  + resource "yandex_compute_instance" "vm-workspace" {
+      + created_at                = (known after apply)
+      + folder_id                 = (known after apply)
+      + fqdn                      = (known after apply)
+      + hostname                  = (known after apply)
+      + id                        = (known after apply)
+      + metadata                  = {
+          + "foo"      = "bar"
+          + "ssh-keys" = <<-EOT
+                ubuntu:-----BEGIN OPENSSH PRIVATE KEY-----
+                'My ssh key'
+                -----END OPENSSH PRIVATE KEY-----
+            EOT
+        }
+      + name                      = "vm-prod-state-2"
+      + network_acceleration_type = "standard"
+      + platform_id               = "standard-v2"
+      + service_account_id        = (known after apply)
+      + status                    = (known after apply)
+      + zone                      = (known after apply)
+
+      + boot_disk {
+          + auto_delete = true
+          + device_name = (known after apply)
+          + disk_id     = (known after apply)
+          + mode        = (known after apply)
+
+          + initialize_params {
+              + block_size  = (known after apply)
+              + description = (known after apply)
+              + image_id    = "fd81hgrcv6lsnkremf32"
+              + name        = (known after apply)
+              + size        = (known after apply)
+              + snapshot_id = (known after apply)
+              + type        = "network-hdd"
+            }
+        }
+
+      + network_interface {
+          + index              = (known after apply)
+          + ip_address         = (known after apply)
+          + ipv4               = true
+          + ipv6               = (known after apply)
+          + ipv6_address       = (known after apply)
+          + mac_address        = (known after apply)
+          + nat                = true
+          + nat_ip_address     = (known after apply)
+          + nat_ip_version     = (known after apply)
+          + security_group_ids = (known after apply)
+          + subnet_id          = (known after apply)
+        }
+
+      + placement_policy {
+          + host_affinity_rules = (known after apply)
+          + placement_group_id  = (known after apply)
+        }
+
+      + resources {
+          + core_fraction = 100
+          + cores         = 2
+          + memory        = 4
+        }
+
+      + scheduling_policy {
+          + preemptible = (known after apply)
+        }
+    }
+
+  # yandex_vpc_address.ext_netology will be created
+  + resource "yandex_vpc_address" "ext_netology" {
+      + created_at = (known after apply)
+      + folder_id  = (known after apply)
+      + id         = (known after apply)
+      + labels     = (known after apply)
+      + name       = "ext_ip"
+      + reserved   = (known after apply)
+      + used       = (known after apply)
+
+      + external_ipv4_address {
+          + address                  = (known after apply)
+          + ddos_protection_provider = (known after apply)
+          + outgoing_smtp_capability = (known after apply)
+          + zone_id                  = "ru-central1-a"
+        }
+    }
+
+  # yandex_vpc_network.netology will be created
+  + resource "yandex_vpc_network" "netology" {
+      + created_at                = (known after apply)
+      + default_security_group_id = (known after apply)
+      + folder_id                 = (known after apply)
+      + id                        = (known after apply)
+      + labels                    = (known after apply)
+      + name                      = "netology-network"
+      + subnet_ids                = (known after apply)
+    }
+
+  # yandex_vpc_subnet.netology-subnet will be created
+  + resource "yandex_vpc_subnet" "netology-subnet" {
+      + created_at     = (known after apply)
+      + folder_id      = (known after apply)
+      + id             = (known after apply)
+      + labels         = (known after apply)
+      + name           = "netology-subnet"
+      + network_id     = (known after apply)
+      + v4_cidr_blocks = [
+          + "10.2.0.0/16",
+        ]
+      + v6_cidr_blocks = (known after apply)
+      + zone           = (known after apply)
+    }
+
+Plan: 7 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + account_id                       = "b1gs4sjqbi3m84ii35ou"
+  + external_ip_address_vm-workspace = [
+      + (known after apply),
+      + (known after apply),
+    ]
+  + internal_ip_address_vm-workspace = [
+      + (known after apply),
+      + (known after apply),
+    ]
+  + region                           = "ru-central1-a"
+  + subnet_id                        = (known after apply)
+```
+
 ---

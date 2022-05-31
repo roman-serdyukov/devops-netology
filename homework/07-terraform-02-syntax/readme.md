@@ -93,7 +93,7 @@ compute-default-zone: ru-central1-a
 ### Ответ для AWS
 1. С помощью CloudFormation.
 
-2. [Ссылка на репозиторий с конфигурацияй Terraform для AWS](https://github.com/roman-serdyukov/devops-netology/tree/main/Terraform/7.2.For_aws)
+2. [Ссылка на репозиторий с конфигурацией Terraform для AWS](https://github.com/roman-serdyukov/devops-netology/tree/main/Terraform/7.2.For_aws)
 
 Результаты команды
 ```bash
@@ -250,7 +250,7 @@ user_id = "AIDASOWOODUFVZB4V6DPS"
 ```
 
 ### Ответ для AWS
-2. [Ссылка на репозиторий с конфигурацияй Terraform для YC](https://github.com/roman-serdyukov/devops-netology/tree/main/Terraform/7.2.For_YC)
+2. [Ссылка на репозиторий с конфигурацией Terraform для YC](https://github.com/roman-serdyukov/devops-netology/tree/main/Terraform/7.2.For_YC)
 
 Результаты команды
 ```bash
@@ -275,43 +275,7 @@ Terraform will perform the following actions:
           + "foo"      = "bar"
           + "ssh-keys" = <<-EOT
                 ubuntu:-----BEGIN OPENSSH PRIVATE KEY-----
-                b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABDZ+QEPdU
-                I8R23QXpS3J0axAAAAEAAAAAEAAAGXAAAAB3NzaC1yc2EAAAADAQABAAABgQC09VcbyVPU
-                bpNmX212w/S74TM3lHxjZkBPP5XCGnRFxZ38cY/pR639qfRuX/kzU+boqnpBrIH53Cb0xy
-                MU+C2Uwd3h+pvoTAIqXtzMCBsH/ydV7AmKcytkds79zuEKQIlE6I8fxWxKgYX5fb2OjCZt
-                PAPRLaoxfplVBclBUZZU5fnDN+W/8XisBsYOQkx3lRGJL3PKqF6vcvmlCBGAME1WNNVlfE
-                k3DOuor/nLcKW7DW5nkgRmHLRuh3MGrtz6KLRNehJr+vybh1eC16f8JZwNktMILtCyE0lO
-                2wCmZBkryJdD88nYrrd9GWlExAFNHaOGXh+ApgYanAiRce/rnxrAZ9+LuRV3j6gwmXD2Ab
-                URQa/NvMq3tusBMdaCfihyolB0Bm5ofTFjJjV2Gsz82Ktb4ws9edBx9KyuC+kNkVTClx19
-                wqUG3VoBeiEWd1hfbZ5x5r10Ongm5cBvJVPmvkv5AEqJ5JeGvSLzOgFpbmkKe6BqA8wd0W
-                8vBZUENhrJmSsAAAWQ5E32Wzm/4CAWNbCJiSqssh1fmK1cR+562Yte3MqclBuLC+avOcK0
-                /1T1eNcy2dXFM10aNnZAWNXI0h7LygXWH0/HPdjDSpzesdytEIZk/AzYfmQ9GNLC/vaihm
-                IZMMk13c59wIiu9S9i4SPYZKCu0M9hoU6de+08Agd9DX9m+COH9YxtkM7hD5ASAlxPWcvT
-                XMUBDOZdLv4dj6Ae3OXEgda98+9Zab/jJ3A6urizpcE+/uSA426UNJpsLzSUSjM0vjioMV
-                ZNnWU1oRPd0nZPawuavhIH6WffCBjqXA9BOYtjNphI3f5QM1go1zvlYFiLDaN7oe3Hxs7x
-                xsys2jvRCQwGpFG9na7UuEuAgkInUXoYjW1Dvz+3o1qXq2dr5xDANlZdWzZrur+/avZ1l5
-                4DeCqJu82OTWRij/+0CQE3nb9ZDeoNScvKoOQq7jDPetDHbfxXhSDU/BEv9Pp0dt3xuF8+
-                N7zpt9iXo6BscuH/qLH2LHssbG9uRygexXYjwJNoLlDySLeXMdRNmJ13OaGNQAgutZY7+p
-                5ws2BbRRYtxewKpXbv3STLA6/rwvCg6FtECAbumM2Pqpj8XE/2dotWZ724ACi5Cvq2DHqc
-                yu6bWGTAJKBDKrF8+Lj9DpXUhiFe3Focu25+/QpsQPL2rnXkZPisztwG+PCnT51+3MCrpJ
-                SAOk0NzU5WApU7iviAmBC/Nj9e8l2bk2deZBQEoi/QM5PeyK/i+fQL2VuxE7WIpdcSanPV
-                Qzn8SmVF3D8YADkl84xirRZ9uZv8hJSfgW17ulbz2jM1KLMywMTbvJYh+qIdkXBs4fL00T
-                enT/Ptp6wfdjwk13wNIi9rjR9mIpgRfM9NUJasFJnQdG1LnhQ9qsiCSp1k7/lS2PXGiGpz
-                8N32LUA3MzSYSfCn7OogwJhx/Ms2Oe0uZ2ISAJjxMZXl4n3+G5w5kYceRoaNvlIf+F57D6
-                20m+NRyZefuLEe2PoJMMiDvB4wa27S+yTZQagnHvSvNFCrQOAsdxOJvCXsxqH970XTTupP
-                mJQXJkdkEJBpkc7p21Pq20Qryn37wOk+pAbXIwmVfknWmr9zPWCOOjKUrWWU3y73xW/LHS
-                34CAFP+YM1ZIHwLKKnBd82lPNtyCQiCHX/WWLu5d1OZLghBBJ5d1bmLXXHj8kVPQUvPz7z
-                HJjjzI06M+5ceRjnaBKhHPsoBnTTF1p4yoCUS5fRrt2I2WMF/fsnVmlkYyftyTsSfVRBvo
-                7L/vtMTVw0OhsV2g6xohhe/nx051z82NYq3b9YFbSiB/PzOLy5fGkweGW3BYnqc4uogfz1
-                sAuEG2Ew6EL5rpyMZbTSiaV6v9aF6bPTWeKWCpodMP4iCTGoVcz+aDE5AdA476LEP/j43c
-                Dp/pQWZmKjpl4r5AzsV5O8O/XGxlaFV1yMrqI2k81ls/Pvjm51gEdpwOF2HHJecEpQVlYB
-                4/5V9eJpfoSS4daVnk3fLlg1waJsL6kWls6WFXcMPZlkOwBHFzz4Jy8OSI3kTlwMYNoAnL
-                fY4Wk04IYfLkZcrvYWXsO4TCXs91vVrNNWWJ7aToO5BSGq8PY2yQkt1OiLt2r31a2G/SyT
-                OvIM6ZiOZR3WiaGcIWldTZME4o6OKBBHXtCWTBKaYH0jleFZAd/6CxqasFdkvRlUiHoGcG
-                8WoJi2q8/cdFRz0jDmVPGSO7OcUN89bLi26nv9IoQGOTHSI23nw6gmlA1sYIEdmMucMx93
-                ALmuI4kx+nFEmb7DazyCT/VXJfeyBE5lOQbxpx1uXKJyQlx8DlnrX5AyE1sBa8wub2LHST
-                4c95nK1zfZFXQAhLhhpkfbfz+dpbI7dEBiqr1FDTM3l3slGOwgHejAVvUIH6iDjfNNTB2X
-                CNpKsLyQbQPwZHuYAoYjtUJoZwk=
+               My ssh key
                 -----END OPENSSH PRIVATE KEY-----
             EOT
         }
