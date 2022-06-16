@@ -1,0 +1,27 @@
+repos:
+- id: github.com/reserdukov/7.4.terraform-atlantis
+  branch: /.*/
+  apply_requirements: [approved, mergeable]
+  workflow: yc
+  allowed_overrides: [workflow]
+  allowed_workflows: [yc]
+  allow_custom_workflows: true
+  # delete_source_branch_on_merge: true
+  # pre_workflow_hooks: 
+  #  - run: my-pre-workflow-hook-command arg1
+  # post_workflow_hooks: 
+  #  - run: my-post-workflow-hook-command arg1
+
+workflows:
+  yc:
+    plan:
+      steps:
+      - run: echo running init
+      - init
+      - plan:
+          extra_args: ["-lock", "false"]
+ #     - run: my-custom-command arg1 arg2
+    apply:
+      steps:
+      - run: echo running apply
+      - apply
