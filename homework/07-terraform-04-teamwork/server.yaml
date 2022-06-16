@@ -1,12 +1,17 @@
+gh-user: roman-serdyukov
+gh-token: my_token_for_atlantis
+log-level: info
+repo-allowlist: github.com/roman-serdyukov/7.4.terraform-atlantis
+
 repos:
-- id: github.com/reserdukov/7.4.terraform-atlantis
+- id: github.com/roman-serdyukov/7.4.terraform-atlantis
   branch: /.*/
   apply_requirements: [approved, mergeable]
   workflow: yc
   allowed_overrides: [workflow]
   allowed_workflows: [yc]
   allow_custom_workflows: true
-  # delete_source_branch_on_merge: true
+  delete_source_branch_on_merge: true
   # pre_workflow_hooks: 
   #  - run: my-pre-workflow-hook-command arg1
   # post_workflow_hooks: 

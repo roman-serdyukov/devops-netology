@@ -55,7 +55,7 @@
 В качестве результата задания приложите ссылку на созданный блок конфигураций. 
 
 ### Ответ
-- [Ссылка на блок конфигураций](https://github.com/roman-serdyukov/devops-netology/blob/Terraform/7.4.Terraform_teamwork)
+- [Ссылка на блок конфигураций](https://github.com/roman-serdyukov/devops-netology/blob/main/Terraform/7.4.Terraform_teamwork)
 
 
 ---
