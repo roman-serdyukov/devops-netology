@@ -16,6 +16,8 @@
 
 ### Ответ
 
+- [Рабочая дирректория для задания #1](https://github.com/roman-serdyukov/7.4.terraform-cloud)
+
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/07-terraform-04-teamwork/screenshots/terraform-cloud1.png)
 
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/07-terraform-04-teamwork/screenshots/terraform-cloud2.png)
