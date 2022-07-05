@@ -27,7 +27,7 @@ resource "yandex_compute_instance" "netology-vm" {
 
   metadata = {
     foo      = "bar"
-    ssh-keys = "ubuntu:${file("~/.ssh/for_netology_rsa")}"
+    ssh-keys = "ubuntu:${file("~/.ssh/for_netology_rsa.pub")}"
   }
 }
 
