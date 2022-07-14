@@ -53,7 +53,7 @@
 - История Issue
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/09-ci-06-gitlab/screenshots/issue_history.png)
 - Merge Request
-![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/09-ci-06-gitlab/screenshots/merge.png)
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/09-ci-06-gitlab/screenshots/merge_and_get.png)
 
 - [Ссылка на репозиторий с кодом](https://gitlab.com/roman-serdyukov/09-ci-06-gitlab.git)
 
