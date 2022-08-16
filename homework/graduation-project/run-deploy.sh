@@ -1,20 +1,21 @@
 #*/usr/bin/bash
-echo Создаю папки проекта
+echo Создаю папку проекта
 mkdir reserdukov
-mkdir reserdukov/terraform
-mkdir reserdukov/project-roles
 
 echo Скачиваю репозиторий с рабочим проектом и загружаю в него roles
-cd reserdukov/project-roles
+cd reserdukov
 git clone https://github.com/roman-serdyukov/graduate-roles.git
+cd graduate-roles
 ansible-galaxy role install -r requirements.yml -p roles
 
 echo Скачиваю репозиторий с terraform
-cd ../terraform
+cd ../
 git clone https://github.com/roman-serdyukov/graduate-terrafom.git
+cd graduate-terrafom
 echo Укажите путь до публичного ключа ssh
-read key_path
-cp $key_path .
+read src
+dest=$(pwd)
+cp $src $dest
 echo Запускаю terraform
 terraform init
 terraform apply --auto-approve
@@ -25,9 +26,8 @@ sleep 30
 echo Запускаю установку roles
 export ANSIBLE_HOST_KEY_CHECKING=False
 
-ansible-playbook -i ../project-roles/inventory/prod.yml ../project-roles/site.yml
+ansible-playbook -i ../graduate-roles/inventory/prod.yml ../graduate-roles/site.yml
 
 echo Скачиваю репозиторий для gitlab ci
-mkdir ../ci
-cd ../ci
+cd ../
 git clone https://github.com/roman-serdyukov/ci-apps.git

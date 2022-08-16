@@ -212,9 +212,9 @@ ___
 ---
 # Дипломный практикум - решения
 
-## В корне лежит скрипт run-deploy.sh для запуска развертывания в автоматическом режиме.
-Скрипт создает дерриктории и скачивает:
-- рабочую папку с inventory для roles;
+## В корне расположен скрипт run-deploy.sh для запуска развертывания в автоматическом режиме.
+Скрипт выполняет следующие действия:
+- создает рабочую папку с inventory для roles;
 - скачивает roles через ansible-galaxy;
 - скачивает рабочую папку для инфраструктуры terraform;
 - запускает terraform;
@@ -226,7 +226,8 @@ ___
 ### Для корректной работы необходимо:
 - Чтобы был действующий ssh ключ на github.
 - Создать комплект ключей для ssh с именем "id_rsa.netology".
-- Указать в момент выполения скрипта путь к созданному публичному ключу (id_rsa.netology.pub)
+- Указать в момент выполения скрипта путь к созданному публичному ключу (id_rsa.netology.pub).
+- Выбрать workspace "prod".
 - Сборка создавалась и тестировалась в ansible 2.13.1. В db-mysql-role может возникать ошибка в более ранних версиях.
 
 
@@ -254,6 +255,12 @@ ___
 
 - Репозиторий с Ansible role [db-mysql-role](https://github.com/roman-serdyukov/db-mysql-role.git)
 
+Вывод stdout ansible
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/db2-slave1.jpg)
+
+Вывод show slave status на db2
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/db2-slave2.jpg)
+
 ## Установка WordPress
 
 - Репозиторий с Ansible role [apps-server-role](https://github.com/roman-serdyukov/apps-server-role.git)
@@ -262,6 +269,11 @@ ___
 
 - Репозиторий с Ansible role [gitlab-ci-role](https://github.com/roman-serdyukov/gitlab-ci-role.git)
 - Репозиторий с файлами push в gitlab и настройки [pipeline](https://github.com/roman-serdyukov/ci-apps.git)
+
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab.jpg)
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-1.jpg)
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-2.jpg)
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-3.jpg)
 
 ## Установка Prometheus, Alert Manager, Node Exporter и Grafana
 
