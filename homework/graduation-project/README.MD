@@ -270,7 +270,7 @@ ___
 - Репозиторий с Ansible role [gitlab-ci-role](https://github.com/roman-serdyukov/gitlab-ci-role.git)
 - Репозиторий с файлами push в gitlab и настройки [pipeline](https://github.com/roman-serdyukov/ci-apps.git)
 
-![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab.jpg)
+![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-0.jpg)
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-1.jpg)
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-2.jpg)
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-3.jpg)
