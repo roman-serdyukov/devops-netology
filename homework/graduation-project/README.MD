@@ -234,6 +234,7 @@ ubuntu:ssh-rsa YouRPublicKeY+BLablABla\+=BLablABla\+=BLablABla\+= youremail@exam
 - В Terraform cloud добавить в нужный workspace переменную среды окружения YC_TOKEN  в Terraform cloud.
 - Зарезервировать в YC статический IP адрес (в зоне ru-central1-a для workspace "stage" и/или ru-central1-b для workspace "prod")
 - В Terraform cloud добавить в нужный workspace переменную "static" со значением статического IP адреса, зарезеврированного в YC.
+- Зарегистрировать необходимые DNS записи.
 - В терминале, перед запуском скрипта run-deploy.sh, добавить TF_TOKEN_app_terraform_io (token для Terraform cloud) в переменные среды окружения.
 - Выбрать нужный workspace в момент выполнения скрипта.
 
