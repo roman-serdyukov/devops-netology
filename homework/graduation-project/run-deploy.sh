@@ -12,10 +12,11 @@ echo Скачиваю репозиторий с terraform
 cd ../
 git clone https://github.com/roman-serdyukov/graduate-terrafom.git
 cd graduate-terrafom
-echo Укажите путь до публичного ключа ssh
-read src
-dest=$(pwd)
-cp $src $dest
+# Следующие строки не нужны, если добавлять публичный ключ в Terraform cloud
+# echo Укажите путь до публичного ключа ssh 
+# read src
+# dest=$(pwd)
+# cp $src $dest
 echo Запускаю terraform
 terraform init
 terraform apply --auto-approve
