@@ -8,7 +8,15 @@
           * [Установка WordPress](#установка-wordpress)
           * [Установка Gitlab CE, Gitlab Runner и настройка CI/CD](#установка-gitlab)
           * [Установка Prometheus, Alert Manager, Node Exporter и Grafana](#установка-prometheus)
- 
+  * [Решения:](#дипломный-практикум---решения)
+    * [Доменное имя](#доменное-имя)
+    * [Инфраструктура Terraform](#инфраструктура-terraform)
+    * [Роль установка Nginx и LetsEncrypt](#роль-установка-nginx-и-letsencrypt)
+    * [Роль установка кластера MySQL](#роль-установка-кластера-mysql)
+    * [Роль установка WordPress](#роль-установка-wordpress)
+    * [Роль установка Gitlab CE и Gitlab Runner](#роль-установка-gitlab-ce-и-gitlab-runner)
+    * [Репозиторий для Gitlab](#репозиторий-для-gitlab)
+    * [Роль установка Prometheus, Alert Manager, Node Exporter и Grafana](#роль-установка-prometheus-alert-manager-node-exporter-и-grafana)
 ---
 ## Цели:
 
@@ -232,7 +240,7 @@ ___
 ubuntu:ssh-rsa YouRPublicKeY+BLablABla\+=BLablABla\+=BLablABla\+= youremail@example.com
 ```
 - В Terraform cloud добавить в нужный workspace переменную среды окружения YC_TOKEN  в Terraform cloud.
-- Зарезервировать в YC статический IP адрес (в зоне ru-central1-a для workspace "stage" и/или ru-central1-b для workspace "prod")
+- Зарезервировать в YC статический IP адрес (в зоне ru-central1-a для workspace "stage" и/или ru-central1-b для workspace "prod").
 - В Terraform cloud добавить в нужный workspace переменную "static" со значением статического IP адреса, зарезеврированного в YC.
 - Зарегистрировать необходимые DNS записи.
 - В терминале, перед запуском скрипта run-deploy.sh, добавить TF_TOKEN_app_terraform_io (token для Terraform cloud) в переменные среды окружения.
@@ -242,15 +250,15 @@ ubuntu:ssh-rsa YouRPublicKeY+BLablABla\+=BLablABla\+=BLablABla\+= youremail@exam
 Сборка создавалась и тестировалась в ansible 2.13.1. В db-mysql-role, а может возникать ошибка в более ранних версиях.
 
 
-## Регистрация доменного имени
+## Доменное имя
 
 - reserdukov.ru
 
-## Создание инфраструктуры
+## Инфраструктура Terraform
 
 - [Репозиторий с Terraform](https://github.com/roman-serdyukov/graduate-terrafom.git)
 
-## Установка Nginx и LetsEncrypt
+## Роль установка Nginx и LetsEncrypt
 
 - Репозиторий с Ansible role [reverse-proxy-role](https://github.com/roman-serdyukov/reverse-proxy-role.git)
 
@@ -262,7 +270,7 @@ ubuntu:ssh-rsa YouRPublicKeY+BLablABla\+=BLablABla\+=BLablABla\+= youremail@exam
 - ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/cert_reserdukov1.jpg)
 - ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/cert_reserdukov2.jpg)
 
-## Установка кластера MySQL
+## Роль установка кластера MySQL
 
 - Репозиторий с Ansible role [db-mysql-role](https://github.com/roman-serdyukov/db-mysql-role.git)
 
@@ -272,20 +280,24 @@ ubuntu:ssh-rsa YouRPublicKeY+BLablABla\+=BLablABla\+=BLablABla\+= youremail@exam
 Вывод show slave status на db2
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/db2-slave2.jpg)
 
-## Установка WordPress
+## Роль установка WordPress
 
 - Репозиторий с Ansible role [apps-server-role](https://github.com/roman-serdyukov/apps-server-role.git)
 
-## Установка Gitlab CE и Gitlab Runner
+## Роль установка Gitlab CE и Gitlab Runner
 
 - Репозиторий с Ansible role [gitlab-ci-role](https://github.com/roman-serdyukov/gitlab-ci-role.git)
-- Репозиторий с файлами push в gitlab и настройки [pipeline](https://github.com/roman-serdyukov/ci-apps.git)
 
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-0.jpg)
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-1.jpg)
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-2.jpg)
 ![Image alt](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/images/gitlab-3.jpg)
 
-## Установка Prometheus, Alert Manager, Node Exporter и Grafana
+
+## Репозиторий для Gitlab
+
+- Репозиторий с файлами для push в gitlab и настройки [pipeline](https://github.com/roman-serdyukov/ci-apps.git)
+
+## Роль установка Prometheus, Alert Manager, Node Exporter и Grafana
 
 - Репозиторий с Ansible role [monitoring-role](https://github.com/roman-serdyukov/monitoring-role.git)
