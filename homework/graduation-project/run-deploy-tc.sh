@@ -27,6 +27,11 @@ read email
 # email=
 echo "Адрес электронной почты $email"
 
+echo Укажите назввание организации Terraform cloud
+read src
+# src=
+sed -i "s/your_company/$src/" versions.tf
+
 echo Запускаю terraform
 terraform init
 # terraform plan

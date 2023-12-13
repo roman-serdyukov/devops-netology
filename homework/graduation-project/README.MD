@@ -222,7 +222,7 @@ ___
 
 ## Запуск деплоя и удаление с помощью скриптов
 
-Для быстрого развертывания инфраструктуры рекомендую использовать скрипт [run-deploy-tc.sh](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/run-deploy-tc.sh) в случае c Terraform Cloud (TC) или run-deploy-NO-tc.sh](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/run-deploy-no-tc.sh) в случае без TC.
+Для быстрого развертывания инфраструктуры рекомендую использовать скрипт [run-deploy-tc.sh](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/run-deploy-tc.sh) в случае c backend в Terraform Cloud (TC) или [run-deploy-NO-tc.sh](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/run-deploy-no-tc.sh) в случае без backend в TC.
 
 После развертывания настройку репозитория в развернутом gitlab, а также push в него подготовленных файлов в папке "ci-apps" производятся в ручном режиме.
 
