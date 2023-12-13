@@ -220,34 +220,85 @@ ___
 ---
 # Дипломный практикум - решения
 
-## В корне расположен скрипт run-deploy.sh для запуска развертывания в автоматическом режиме.
+## Запуск деплоя и удаление с помощью скриптов
+
+Для быстрого развертывания инфраструктуры рекомендую использовать скрипт [run-deploy-tc.sh](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/run-deploy-tc.sh) в случае c Terraform Cloud (TC) или run-deploy-NO-tc.sh](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/run-deploy-no-tc.sh) в случае без TC.
+
+После развертывания настройку репозитория в развернутом gitlab, а также push в него подготовленных файлов в папке "ci-apps" производятся в ручном режиме.
+
+Для быстрого удаления развернутой инфраструкртуры рекомендую использовать скрипт [destroy-deploy.sh](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/destroy-deploy.sh).
+
+### Скрипт для запуска развертывания в автоматическом режиме [run-deploy-tc.sh](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/run-deploy-tc.sh)
+
+В корне расположен скрипт run-deploy.sh для запуска развертывания в автоматическом режиме.
 Скрипт выполняет следующие действия:
 - создает рабочую папку с inventory для roles;
 - скачивает roles через ansible-galaxy;
 - скачивает рабочую папку для инфраструктуры terraform;
 - запускает terraform;
 - запускает playbook с roles;
-- скачивает репозиторий для pipeline на gitlab.
+- скачивает репозиторий для pipeline на gitlab в локальную папку.
 
-Удалить инфраструктуру с папками проекта можно с помощью скрипта в корне destroy-deploy.sh (потребуется пароль sudo для удаления рабочей дирректории).
+В момент выполнения скрипта после запроса необходимо будет ввести следующие данные:
+- TF_TOKEN_app_terraform_io (token для Terraform cloud);
+- путь к приватному ключу для подключения по SSH;
+- имя организации, созданной в Terraform cloud;
+- выбрать нужный workspace;
+- адрес элкетронной почты для запроса сертификатов.
 
-### Для корректной работы необходимо:
-- Создать комплект ключей для ssh c именем id_rsa.netology (для ansible ролей) в папке ~/.ssh.
+Перед запуском необходимо выполниять все условия из пункта [Подготовка перед запуском](#подготовка-перед-запуском)
+
+### Скрипт для запуска развертывания в автоматическом режиме [run-deploy-NO-tc.sh](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/run-deploy-NO-tc.sh)
+
+В корне расположен скрипт run-deploy.sh для запуска развертывания в автоматическом режиме.
+Скрипт выполняет следующие действия:
+- создает рабочую папку с inventory для roles;
+- скачивает roles через ansible-galaxy;
+- скачивает рабочую папку для инфраструктуры terraform;
+- запускает terraform;
+- запускает playbook с roles;
+- скачивает репозиторий для pipeline на gitlab в локальную папку.
+
+В момент выполнения скрипта после запроса необходимо будет ввести следующие данные:
+- YC_TOKEN (token для Yandex Cloud);
+- путь к приватному ключу для подключения по SSH;
+- cloud_id для YC;
+- folder_id для YC;
+- имя созданного домена (зона DNS)
+- адрес элкетронной почты для запроса сертификатов.
+
+Перед запуском необходимо выполниять все условия из пункта [Подготовка перед запуском](#подготовка-перед-запуском)
+
+### Скрипт для удаления развернутой инфраструктуры и скачанных репозиториев [destroy-deploy.sh](https://github.com/roman-serdyukov/devops-netology/blob/main/homework/graduation-project/destroy-deploy.sh).
+
+В момент выполнения скрипта после запроса необходимо будет ввести следующие данные:
+- TF_TOKEN_app_terraform_io (token для Terraform cloud) или YC_TOKEN (токен для YC).
+
+### Подготовка перед запуском
+1. C использованим backend Terraform Cloud
+Для корректной работы необходимо:
+- Зарегистрировать домен и делигировать управление на NS YC.
+- Создать комплект ключей для ssh (для ansible ролей) в папке ~/.ssh.
 - Добавить ssh ключ на github.
+- Создать организацию и workspaces в Terraform cloud. В файле versions.tf настроено на развертывание среды в workspace "prod".
 - В Terraform cloud добавить в нужный workspace переменную sshkey cо значением публичного ключа, созданного в п.1. Важно добавить значение следующим образом: [ имя пользователя VM (в нашем случае "ubuntu") ]:[ сам ключ ].
 Пример:
 ```
 ubuntu:ssh-rsa YouRPublicKeY+BLablABla\+=BLablABla\+=BLablABla\+= youremail@example.com
 ```
-- В Terraform cloud добавить в нужный workspace переменную среды окружения YC_TOKEN  в Terraform cloud.
-- Зарезервировать в YC статический IP адрес (в зоне ru-central1-a для workspace "stage" и/или ru-central1-b для workspace "prod").
-- В Terraform cloud добавить в нужный workspace переменную "static" со значением статического IP адреса, зарезеврированного в YC.
-- Зарегистрировать необходимые DNS записи.
-- В терминале, перед запуском скрипта run-deploy.sh, добавить TF_TOKEN_app_terraform_io (token для Terraform cloud) в переменные среды окружения.
-- Выбрать нужный workspace в момент выполнения скрипта.
+- В Terraform cloud добавить в нужный workspace (по умолчанию "prod") переменную среды окружения YC_TOKEN  в Terraform cloud.
+- В Terraform cloud добавить в нужный workspace (по умолчанию "prod") переменную среды окружения YC_CLOUD_ID - cloud_id для Вашего YC.
+- В Terraform cloud добавить в нужный workspace (по умолчанию "prod") переменную среды окружения YC_FOLDER_ID - folder_id для Вашего YC
+- В Terraform cloud добавить в нужный workspace (по умолчанию "prod") переменную dns-zone со значением имени Вашей зоны DNS.
+
+2. Без использования backend Terraform Cloud
+Для корректной работы необходимо:
+- Зарегистрировать домен и делигировать управление на NS YC.
+- Создать комплект ключей для ssh (для ansible ролей) в папке ~/.ssh.
+- Добавить ssh ключ на github.
 
 ## Важно!!!
-Сборка создавалась и тестировалась в ansible 2.13.1. В db-mysql-role, а может возникать ошибка в более ранних версиях.
+Сборка создавалась и тестировалась в ansible 2.13.1. В role [db-mysql-role](https://github.com/roman-serdyukov/db-mysql-role.git), а может возникать ошибка в более ранних версиях.
 
 
 ## Доменное имя
