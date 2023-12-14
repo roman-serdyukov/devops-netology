@@ -37,8 +37,23 @@ terraform init
 # terraform plan
 terraform apply --auto-approve
 
- echo Пауза на создание инфраструктуры в YC
- sleep 30
+echo Пауза на создание инфраструктуры в YC
+sleep 30
+
+echo "Проверка регистрации созданных ресурсных записей. Процесс не продолжится без доступности всех доменных имен"
+
+testing_hosts=("www.$dnszone" "gitlab.$dnszone" "runner.$dnszone" "monitoring.$dnszone" "db1.$dnszone" "db2.$dnszone")
+for host in ${testing_hosts[@]}
+do
+        nslookup $host > /dev/null 2>&1
+        if (( $? != 0 )); then
+                while (( $? == 0 ))
+                do
+                nslookup $host > /dev/null & echo $host not find
+                done
+        else echo $host is find
+        fi
+done 
 
 echo Скачиваю репозиторий с рабочим проектом и загружаю в него roles
 cd $dir/reserdukov
