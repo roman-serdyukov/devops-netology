@@ -62,17 +62,16 @@ echo "Проверка регистрации созданных ресурсн�
 testing_hosts=("www.$dnszone" "gitlab.$dnszone" "runner.$dnszone" "monitoring.$dnszone" "db1.$dnszone" "db2.$dnszone")
 for host in ${testing_hosts[@]}
 do
-        nslookup $host > /dev/null 2>&1
-#        ping -c 2 -W 1 -q $host > /dev/null 2>&1
-        if (( $? != 0 )); then
-                while (( $? == 0 ))
-                do
-                nslookup $host > /dev/null 2>&1
-#               ping -c 2 -W 1 -q $host > /dev/null 2>&1
+        while true
+        do
+#               nslookup $host > /dev/null 2>&1
+                ping -c 2 -W 3 -q $host > /dev/null 2>&1
+                if (( $? != 0 )); then
                 echo $host not find
-                done
-        else echo $host is find
-        fi
+                else echo $host is find
+                break
+                fi
+        done
 done 
 
 echo Скачиваю репозиторий с рабочим проектом и загружаю в него roles
